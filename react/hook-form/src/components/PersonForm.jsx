@@ -44,8 +44,12 @@ const PersonForm = () =>{
                 <input onChange = {(e)=>{setPassword(e.target.value)}} type = 'password' name = 'password' className='form-control'></input>
                 {
                     password.length<8 ?
+                    <>
                         <p className = 'text-danger'>Password must be at least 8 characters</p>
+                        <p>Hope this works</p>
+                    </>
                         : ''
+                    
                 }
             </div>
             <div className='form-group'>
