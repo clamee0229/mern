@@ -26,7 +26,6 @@ const Form = () => {
             isComplete: false
         })
 
-
     }
 
     const completeTask = (e,idx) => {
