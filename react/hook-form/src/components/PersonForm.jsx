@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import DisplayPerson from './DisplayPerson';
 const PersonForm = () =>{
 
     let [firstName, setFirstName] = useState('')
@@ -62,13 +62,7 @@ const PersonForm = () =>{
                 }
             </div>
         </form>
-        <div>
-            <p>First Name: {firstName}</p>
-            <p>Last Name: {lastName}</p>
-            <p>Email: {email}</p>
-            <p>Password: {password}</p>
-            <p>Confirm Password: {confirmPassword}</p>
-        </div>
+        <DisplayPerson firstName = {firstName} lastName = {lastName} email = {email} password = {password} confirmPassword = {confirmPassword}></DisplayPerson>
     </>
 
     )
