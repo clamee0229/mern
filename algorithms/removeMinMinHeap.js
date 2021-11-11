@@ -41,12 +41,12 @@ class Heap{
         //first- swap the min value (index 1) with the value (at the last index of the heap)
         [this.heap[1], this.heap[this.heap.length-1]] = [this.heap[this.heap.length-1], this.heap[1]]
         //pop out the last value
-        this.heap.pop()
+        let result = this.heap.pop()
         //rearrange the heap
         let parentIndex = 1
-        while(this.heap[parentIndex*2] < this.heap[parentIndex] || this.heap[parentIndex*2 + 1] < this.heap[parentIndex]){
+        while(this.heap[parentIndex*2] < this.heap[parentIndex] ||  this.heap[parentIndex*2 + 1] < this.heap[parentIndex]){
             let swapIndex
-            if(this.heap[parentIndex*2] < this.heap[parentIndex*2 + 1]){
+            if(this.heap[parentIndex*2] < this.heap[parentIndex*2 + 1] || this.heap[parentIndex*2 + 1] == undefined){
                 swapIndex = parentIndex * 2
             }
             else{
@@ -55,7 +55,7 @@ class Heap{
             [this.heap[parentIndex], this.heap[swapIndex]] = [this.heap[swapIndex], this.heap[parentIndex]]
             parentIndex = swapIndex
         }
-        return this
+        return result
     }
 
 }
@@ -66,5 +66,26 @@ heap1 = new Heap()
 
 heap1.insert(10).insert(5).insert(38).insert(3).insert(-3).insert(2.4).insert(20)
 console.log(heap1)
-heap1.remove()
+let arr = []
+arr.push(heap1.remove())
 console.log(heap1)
+
+arr.push(heap1.remove())
+console.log(heap1)
+
+arr.push(heap1.remove())
+console.log(heap1)
+
+arr.push(heap1.remove())
+console.log(heap1)
+
+arr.push(heap1.remove())
+console.log(heap1)
+
+arr.push(heap1.remove())
+console.log(heap1)
+
+arr.push(heap1.remove())
+
+console.log(heap1)
+console.log(arr)
